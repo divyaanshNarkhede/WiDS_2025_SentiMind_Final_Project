@@ -2,8 +2,6 @@
 
 A comprehensive NLP project for sentiment classification using the Amazon Fine Food Reviews dataset. This project preprocesses real-world review text, extracts meaningful features using multiple techniques, and prepares data for machine learning models.
 
-![Sentiment Distribution](plots/sentiment_distribution.png)
-
 ## 📋 Project Overview
 
 The goal of this project is to analyze customer reviews and classify them into three sentiment categories:
@@ -221,7 +219,7 @@ python feature_extraction.py
 ## 📊 Visualizations
 
 ### Sentiment Distribution
-![Sentiment Distribution](outputs/sentiment_distribution.png)
+![Sentiment Distribution](plots/sentiment_distribution.png)
 
 The dataset shows a significant class imbalance with positive reviews dominating (~77%).
 
@@ -262,14 +260,8 @@ with open('outputs/tfidf_vectorizer.pkl', 'rb') as f:
 | gensim | 4.4+ | Word2Vec embeddings |
 | scipy | 1.16+ | Sparse matrix operations |
 
-## 📝 License
-
-This project is for educational purposes as part of the WiDS 2025 program.
+This project is part of the WiDS 2025 program.
 
 ## 👤 Author
 
-WiDS 2025 Participant
-
----
-
-*This project demonstrates NLP preprocessing and feature extraction techniques for sentiment analysis.*
+Divyaansh Narkhede, 24B0981
