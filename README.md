@@ -2,7 +2,7 @@
 
 A comprehensive NLP project for sentiment classification using the Amazon Fine Food Reviews dataset. This project preprocesses real-world review text, extracts meaningful features using multiple techniques, and prepares data for machine learning models.
 
-![Sentiment Distribution](outputs/sentiment_distribution.png)
+![Sentiment Distribution](plots/sentiment_distribution.png)
 
 ## 📋 Project Overview
 
