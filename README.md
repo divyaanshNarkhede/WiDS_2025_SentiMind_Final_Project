@@ -2,7 +2,7 @@
 
 A comprehensive NLP project for sentiment classification using the Amazon Fine Food Reviews dataset. This project preprocesses real-world review text, extracts meaningful features using multiple techniques, and prepares data for machine learning models.
 
-![Sentiment Distribution](outputs/sentiment_distribution.png)
+![Sentiment Distribution](plots/sentiment_distribution.png)
 
 ## 📋 Project Overview
 
@@ -272,18 +272,18 @@ The `model_building.py` module trains and evaluates four classification models u
 ## 📊 Visualizations
 
 ### Sentiment Distribution
-![Sentiment Distribution](outputs/sentiment_distribution.png)
+![Sentiment Distribution](plots/sentiment_distribution.png)
 
 The dataset shows a significant class imbalance with positive reviews dominating (~77%).
 
 ### Model Comparison
-![Model Comparison](outputs/model_comparison.png)
+![Model Comparison](plots/model_comparison.png)
 
 ### Detailed Metrics
-![Detailed Metrics](outputs/detailed_metrics.png)
+![Detailed Metrics](plots/detailed_metrics.png)
 
 ### Confusion Matrix (Logistic Regression)
-![Confusion Matrix](outputs/confusion_matrix_logistic_regression.png)
+![Confusion Matrix](plots/confusion_matrix_logistic_regression.png)
 
 ## 🔄 Loading Saved Features
 
@@ -322,13 +322,9 @@ with open('outputs/tfidf_vectorizer.pkl', 'rb') as f:
 | gensim | 4.4+ | Word2Vec embeddings |
 | scipy | 1.16+ | Sparse matrix operations |
 
-## 📝 License
-
-This project is for educational purposes as part of the WiDS 2025 program.
-
 ## 👤 Author
 
-WiDS 2025 Participant
+24B0981, Divyaansh Narkhede
 
 ---
 
