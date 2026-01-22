@@ -2,6 +2,8 @@
 
 A comprehensive NLP project for sentiment classification using the Amazon Fine Food Reviews dataset. This project preprocesses real-world review text, extracts meaningful features using multiple techniques, and prepares data for machine learning models.
 
+![Sentiment Distribution](outputs/sentiment_distribution.png)
+
 ## 📋 Project Overview
 
 The goal of this project is to analyze customer reviews and classify them into three sentiment categories:
@@ -17,6 +19,7 @@ WiDS_2025/
 ├── Reviews.csv                  # Original dataset (Amazon Fine Food Reviews)
 ├── preprocessing.py             # Data cleaning and preprocessing
 ├── feature_extraction.py        # Feature extraction techniques
+├── model_building.py            # Model training and evaluation
 ├── WIDS_2025_SentiMind.ipynb   # Jupyter notebook for exploration
 ├── nlp-env/                     # Python virtual environment
 └── outputs/                     # Generated outputs
@@ -32,7 +35,13 @@ WiDS_2025/
     ├── y_test.npy               # Test labels
     ├── bow_vectorizer.pkl       # Trained BoW vectorizer
     ├── tfidf_vectorizer.pkl     # Trained TF-IDF vectorizer
-    └── word2vec_model.bin       # Trained Word2Vec model
+    ├── word2vec_model.bin       # Trained Word2Vec model
+    ├── model_*.pkl              # Trained classification models
+    ├── model_comparison.png     # Model accuracy comparison
+    ├── detailed_metrics.png     # Detailed metrics comparison
+    ├── confusion_matrix_*.png   # Confusion matrices for each model
+    ├── model_performance.csv    # Performance metrics table
+    └── model_metrics.json       # Metrics in JSON format
 ```
 
 ## 📊 Dataset
@@ -188,6 +197,9 @@ python preprocessing.py
 
 # Step 2: Feature Extraction
 python feature_extraction.py
+
+# Step 3: Model Building & Evaluation
+python model_building.py
 ```
 
 ## 📈 Output Files
@@ -216,12 +228,62 @@ python feature_extraction.py
 | `tfidf_vectorizer.pkl` | Fitted TfidfVectorizer |
 | `word2vec_model.bin` | Trained Word2Vec model |
 
+### Trained Classification Models
+
+| File | Description |
+|------|-------------|
+| `model_logistic_regression.pkl` | Trained Logistic Regression model |
+| `model_svm.pkl` | Trained SVM (LinearSVC) model |
+| `model_random_forest.pkl` | Trained Random Forest model |
+| `model_gradient_boosting.pkl` | Trained Gradient Boosting model |
+| `model_performance.csv` | Performance metrics comparison |
+| `model_metrics.json` | Detailed metrics in JSON format |
+
+## 🤖 Model Building
+
+The `model_building.py` module trains and evaluates four classification models using TF-IDF features:
+
+### Models Implemented
+
+1. **Logistic Regression** - Fast, interpretable linear classifier
+2. **SVM (LinearSVC)** - Support Vector Machine optimized for text
+3. **Random Forest** - Ensemble of decision trees
+4. **Gradient Boosting** - Sequential ensemble with boosting
+
+### Model Performance
+
+| Model | Accuracy | F1 (Macro) | F1 (Weighted) |
+|-------|----------|------------|---------------|
+| **Logistic Regression** | **85.33%** | 0.613 | 0.830 |
+| SVM | 84.95% | 0.620 | 0.832 |
+| Random Forest | 83.01% | 0.544 | 0.789 |
+| Gradient Boosting | 81.11% | 0.482 | 0.761 |
+
+**Best Model:** Logistic Regression with 85.33% accuracy
+
+### Classification Report (Logistic Regression)
+
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| Negative | 0.74 | 0.63 | 0.68 | 1,507 |
+| Neutral | 0.54 | 0.15 | 0.23 | 809 |
+| Positive | 0.88 | 0.97 | 0.92 | 7,684 |
+
 ## 📊 Visualizations
 
 ### Sentiment Distribution
-![Sentiment Distribution](plots/sentiment_distribution.png)
+![Sentiment Distribution](outputs/sentiment_distribution.png)
 
 The dataset shows a significant class imbalance with positive reviews dominating (~77%).
+
+### Model Comparison
+![Model Comparison](outputs/model_comparison.png)
+
+### Detailed Metrics
+![Detailed Metrics](outputs/detailed_metrics.png)
+
+### Confusion Matrix (Logistic Regression)
+![Confusion Matrix](outputs/confusion_matrix_logistic_regression.png)
 
 ## 🔄 Loading Saved Features
 
@@ -260,8 +322,14 @@ with open('outputs/tfidf_vectorizer.pkl', 'rb') as f:
 | gensim | 4.4+ | Word2Vec embeddings |
 | scipy | 1.16+ | Sparse matrix operations |
 
-This project is part of the WiDS 2025 program.
+## 📝 License
+
+This project is for educational purposes as part of the WiDS 2025 program.
 
 ## 👤 Author
 
-Divyaansh Narkhede, 24B0981
+WiDS 2025 Participant
+
+---
+
+*This project demonstrates a complete NLP pipeline for sentiment analysis: from data preprocessing and feature extraction to model training and evaluation.*
